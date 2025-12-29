@@ -1,44 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBar({super.key, required this.profilePicture});
+
+  final String profilePicture;
+
+  @override
+  Size get preferredSize => const Size.fromHeight(100);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Column(
+    return AppBar(
+      toolbarHeight: 100,
+      title: Padding(
+        padding: const EdgeInsets.only(left: 5),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Foodgo',
               style: GoogleFonts.lobster(
-                fontSize: 48,
-                color: const Color(0xFF3b2d28),
+                fontSize: 42,
+                color: const Color(0xFF3E3232),
+                fontWeight: FontWeight.w500,
               ),
             ),
             Text(
-              'Order your favourtie food!',
+              'Order your favourite food!',
               style: GoogleFonts.poppins(
                 fontSize: 16,
-                fontWeight: FontWeight.w500,
                 color: Colors.grey[600],
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],
         ),
-        Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            image: DecorationImage(
-              image: AssetImage('assets/images/pic.png'),
-              fit: BoxFit.cover,
+      ),
+
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 15),
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(image: NetworkImage(profilePicture)),
             ),
-            boxShadow: [BoxShadow(color: Colors.grey.withValues(alpha: 0.3))],
           ),
         ),
       ],

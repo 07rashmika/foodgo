@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:standard_searchbar/new/standard_search_anchor.dart';
 import 'package:standard_searchbar/new/standard_search_bar.dart';
+import 'package:standard_searchbar/new/standard_search_controller.dart';
 import 'package:standard_searchbar/new/standard_suggestions.dart';
 
 class SearchBox extends StatefulWidget {
@@ -11,10 +12,12 @@ class SearchBox extends StatefulWidget {
 }
 
 class _SearchBoxState extends State<SearchBox> {
+  final StandardSearchController _searchController = StandardSearchController();
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 30),
+      padding: EdgeInsets.only(top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -22,6 +25,7 @@ class _SearchBoxState extends State<SearchBox> {
             child: StandardSearchAnchor(
               searchBar: StandardSearchBar(width: double.infinity),
               suggestions: StandardSuggestions(suggestions: []),
+              controller: _searchController,
             ),
           ),
 
