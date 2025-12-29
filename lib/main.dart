@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodgo/screens/home.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:foodgo/screens/tabs.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Flutter Demo', home: HomeScreen());
+    return MaterialApp(home: const TabsScreen());
   }
 }
