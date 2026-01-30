@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foodgo/screens/profile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.profilePicture});
+  const CustomAppBar({
+    super.key,
+    this.profilePicture = 'https://www.gravatar.com/avatar/?d=mp&s=256',
+  });
 
   final String profilePicture;
 
@@ -42,12 +46,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 15),
-          child: Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              image: DecorationImage(image: NetworkImage(profilePicture)),
+          child: InkWell(
+            onTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (context) => ProfileScreen()));
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                image: DecorationImage(image: NetworkImage(profilePicture)),
+              ),
             ),
           ),
         ),
