@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:foodgo/screens/add.dart';
 import 'package:foodgo/widgets/bottom_nav_bar.dart';
+
 import 'package:foodgo/widgets/custom_app_bar.dart';
 
 class TabsScreen extends ConsumerStatefulWidget {
@@ -38,6 +39,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       extendBody: true,
+
     );
   }
 }

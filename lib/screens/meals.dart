@@ -14,6 +14,7 @@ class _BurgerListScreenState extends State<BurgerListScreen> {
   // We store the Future in a variable so it doesn't reload every time we rebuild
   late Future<List<Burger>> _burgersFuture;
 
+
   @override
   void initState() {
     super.initState();
@@ -62,6 +63,7 @@ class _BurgerListScreenState extends State<BurgerListScreen> {
             },
           );
         },
+
       ),
     );
   }
