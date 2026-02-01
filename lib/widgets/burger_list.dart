@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:foodgo/models/burger.dart';
 import 'package:foodgo/services/burger_api.dart';
