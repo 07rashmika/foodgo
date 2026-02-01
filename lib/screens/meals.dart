@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodgo/models/burger.dart';  // Update with your actual path
+import 'package:foodgo/models/burger.dart'; // Update with your actual path
 import 'package:foodgo/services/burger_api.dart';
 import 'burger_detail_screen.dart'; // We will create this next
 
@@ -13,7 +13,6 @@ class BurgerListScreen extends StatefulWidget {
 class _BurgerListScreenState extends State<BurgerListScreen> {
   // We store the Future in a variable so it doesn't reload every time we rebuild
   late Future<List<Burger>> _burgersFuture;
-
 
   @override
   void initState() {
@@ -63,7 +62,6 @@ class _BurgerListScreenState extends State<BurgerListScreen> {
             },
           );
         },
-
       ),
     );
   }
@@ -88,7 +86,9 @@ class _BurgerListScreenState extends State<BurgerListScreen> {
           children: [
             // Burger Image with Error Handling
             ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+              borderRadius: const BorderRadius.vertical(
+                top: Radius.circular(12),
+              ),
               child: SizedBox(
                 height: 200,
                 width: double.infinity,
@@ -98,7 +98,11 @@ class _BurgerListScreenState extends State<BurgerListScreen> {
                   errorBuilder: (context, error, stackTrace) {
                     return Container(
                       color: Colors.grey[300],
-                      child: const Icon(Icons.fastfood, size: 50, color: Colors.grey),
+                      child: const Icon(
+                        Icons.fastfood,
+                        size: 50,
+                        color: Colors.grey,
+                      ),
                     );
                   },
                 ),
