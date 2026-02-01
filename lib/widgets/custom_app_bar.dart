@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:foodgo/screens/profile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -31,10 +30,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
+            const SizedBox(height: 10),
             Text(
               'Order your favourite food!',
               style: GoogleFonts.poppins(
-                fontSize: 16,
+                fontSize: 18,
                 color: Colors.grey[600],
                 fontWeight: FontWeight.w500,
               ),
@@ -46,19 +46,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 15),
-          child: InkWell(
-            onTap: () {
-              Navigator.of(
-                context,
-              ).push(MaterialPageRoute(builder: (context) => ProfileScreen()));
-            },
-            child: Container(
-              width: 60,
-              height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(image: NetworkImage(profilePicture)),
-              ),
+          child: Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(image: NetworkImage(profilePicture)),
             ),
           ),
         ),
