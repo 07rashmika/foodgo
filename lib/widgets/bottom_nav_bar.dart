@@ -15,7 +15,7 @@ class BottomNavBar extends ConsumerWidget {
     return IconButton(
       onPressed: onTap,
       icon: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: .min,
         children: [
           Icon(
             icon,
@@ -29,7 +29,7 @@ class BottomNavBar extends ConsumerWidget {
               width: 4,
               decoration: const BoxDecoration(
                 color: Colors.white,
-                shape: BoxShape.circle,
+                shape: .circle,
               ),
             ),
           ),
@@ -50,9 +50,9 @@ class BottomNavBar extends ConsumerWidget {
         notchMargin: 16.0,
         child: Container(
           height: 60,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          padding: const .symmetric(horizontal: 10),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: .spaceBetween,
             children: [
               _buildTabIcon(
                 icon: Icons.home_outlined,

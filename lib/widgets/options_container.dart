@@ -20,7 +20,7 @@ class _OptionsContainerState extends ConsumerState<OptionsContainer> {
       height: 50,
       child: ListView.builder(
         scrollDirection: .horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 0),
+        padding: const .symmetric(horizontal: 0),
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final isSelected = selectedCategoryIndex == index;
@@ -31,11 +31,11 @@ class _OptionsContainerState extends ConsumerState<OptionsContainer> {
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 250),
-              margin: const EdgeInsets.only(right: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              margin: const .only(right: 10),
+              padding: const .symmetric(horizontal: 25),
               decoration: BoxDecoration(
                 color: isSelected ? Color(0xFFEF2A39) : const Color(0xFFF3F4F6),
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: .circular(15),
                 boxShadow: isSelected
                     ? [
                         BoxShadow(
@@ -51,7 +51,7 @@ class _OptionsContainerState extends ConsumerState<OptionsContainer> {
                   categories[index],
                   style: GoogleFonts.inter(
                     color: isSelected ? Colors.white : Colors.grey[600],
-                    fontWeight: isSelected ? FontWeight.bold : FontWeight.w500,
+                    fontWeight: isSelected ? .bold : .w500,
                   ),
                 ),
               ),

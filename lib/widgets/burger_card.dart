@@ -28,31 +28,31 @@ class _BurgerCardState extends State<BurgerCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: .circular(20),
       child: Container(
         height: 220,
         width: 180,
-        padding: EdgeInsets.all(15),
+        padding: .all(15),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: const Color(0xFFF3F4F6), width: 2),
+          borderRadius: .circular(20),
+          border: .all(color: const Color(0xFFF3F4F6), width: 2),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: .spaceEvenly,
+          crossAxisAlignment: .start,
           children: [
             Center(
               child: Image.network(
                 widget.burgerImage,
-                fit: BoxFit.cover,
+                fit: .cover,
                 width: 120,
                 height: 120,
               ),
             ),
             Text(
               widget.name,
-              overflow: TextOverflow.ellipsis,
+              overflow: .ellipsis,
               style: GoogleFonts.roboto(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,

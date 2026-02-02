@@ -24,7 +24,7 @@ class _BurgerListState extends State<BurgerList> {
     return FutureBuilder(
       future: _burgersList,
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+        if (snapshot.connectionState == .waiting) {
           return const Center(child: CircularProgressIndicator());
         }
 

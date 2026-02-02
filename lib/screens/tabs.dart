@@ -9,7 +9,6 @@ import 'package:foodgo/screens/home.dart';
 import 'package:foodgo/screens/messages.dart';
 import 'package:foodgo/screens/profile.dart';
 import 'package:foodgo/widgets/bottom_nav_bar.dart';
-import 'package:foodgo/widgets/custom_app_bar.dart';
 
 class TabsScreen extends ConsumerStatefulWidget {
   const TabsScreen({super.key});
@@ -33,7 +32,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
       height: 75,
       width: 75,
       decoration: BoxDecoration(
-        shape: BoxShape.circle,
+        shape: .circle,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: .25),
@@ -68,11 +67,11 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
 
     return Scaffold(
       extendBody: true,
-      appBar: CustomAppBar(),
+      // appBar: const CustomAppBar(),
       body: IndexedStack(index: selectedIndex, children: _screens),
       bottomNavigationBar: const BottomNavBar(),
       floatingActionButton: _buildFab(context),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: .centerDocked,
     );
   }
 }
